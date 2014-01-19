@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  h3 My name is #{koda.name.full} and I am #{koda.age} years old!
+
+  form(action="/createKitten", method="POST")
+      input(type="hidden", name="_id", value=koda._id)
+      label(for="firstName") First Name:
+      input(name="firstName", type="text", value=koda.name.first)
+      br
+      label(for="lastName") Last Name:
+      input(name="lastName", type="text", value=koda.name.last)
+      br
+      label(for="age") Age:
+      input(name="age", type="text", value=koda.age)
+      br
+      br
+      input(type="submit", value="Save")
